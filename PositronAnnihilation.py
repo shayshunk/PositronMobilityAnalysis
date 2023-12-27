@@ -36,6 +36,7 @@ IBDPD.set_index('evt')
 IBDPD['z'] = IBDPD['z'] * -1
 
 posPD = posPD[posPD.vol >= 0]
+posPD = posPD[posPD.vol <= 153]
 print(posPD.shape)
 posPD = posPD[posPD.time < 0.15]
 print(posPD.shape)
@@ -43,6 +44,7 @@ posPD = posPD[posPD.gammas == 2]
 posPD = posPD[posPD.Egammas == 1.02199782]
 
 IBDPD = IBDPD[IBDPD.vol >= 0]
+IBDPD = IBDPD[IBDPD.vol <= 153]
 IBDPD = IBDPD[IBDPD.PID == -11]
 
 IBDPD = IBDPD[IBDPD.evt.isin(posPD.evt)]
