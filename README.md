@@ -1,3 +1,10 @@
+
+<p align="center">
+    <img src="PROSPECT.png" width="200">
+</p>
+
+---
+
 <h1 align="center">
     <br>
     Positron Mobility Analysis
@@ -43,8 +50,3 @@ python3 PostironAnnihilation.py
 ```
 
 ---
-<br>
-
-<p align="center">
-    <img src="PROSPECT.png" width="200">
-</p>
