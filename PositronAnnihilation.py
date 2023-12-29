@@ -57,6 +57,10 @@ IBDPD = IBDPD[IBDPD.PID == -11]
 IBDPD = IBDPD[IBDPD.evt.isin(posPD.evt)]
 posPD = posPD[posPD.evt.isin(IBDPD.evt)]
 
+# Make counting and combining easier by resetting indices
+posPD = posPD.reset_index(drop=True)
+IBDPD = IBDPD.reset_index(drop=True)
+
 # Extracting columns to combine into one dataframe
 IBDx = IBDPD['x']
 IBDy = IBDPD['y']
