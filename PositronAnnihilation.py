@@ -102,20 +102,20 @@ print("If there are any misaligned events, it will print now:\n", posPD.loc[posP
 posPD.drop('IBD evt', axis=1)
 
 # Cutting a few mm (30) inside the active detector. Only applied to IBDs
-#posPD = posPD[posPD['IBD y'] < 773]
-#posPD = posPD[posPD['IBD y'] > -773]
-#posPD = posPD[posPD['Pos y'] < 803]
-#posPD = posPD[posPD['Pos y'] > -803]
+posPD = posPD[posPD['IBD y'] < 773]
+posPD = posPD[posPD['IBD y'] > -773]
+# posPD = posPD[posPD['Pos y'] < 803]
+# posPD = posPD[posPD['Pos y'] > -803]
 
-#posPD = posPD[posPD['IBD z'] < 557]
-#posPD = posPD[posPD['IBD z'] > -557]
-#posPD = posPD[posPD['Pos z'] < 587]
-#posPD = posPD[posPD['Pos z'] > -587]
+posPD = posPD[posPD['IBD z'] < 557]
+posPD = posPD[posPD['IBD z'] > -557]
+# posPD = posPD[posPD['Pos z'] < 587]
+# posPD = posPD[posPD['Pos z'] > -587]
 
-#posPD = posPD[posPD['IBD x'] < 1019]
-#posPD = posPD[posPD['IBD x'] > -1019]
-#posPD = posPD[posPD['Pos x'] < 1022]
-#posPD = posPD[posPD['Pos x'] > -1022]
+posPD = posPD[posPD['IBD x'] < 1019]
+posPD = posPD[posPD['IBD x'] > -1019]
+# posPD = posPD[posPD['Pos x'] < 1022]
+# posPD = posPD[posPD['Pos x'] > -1022]
 
 # Aligning tables again just for safety
 IBDPD = IBDPD[IBDPD.evt.isin(posPD.evt)]
@@ -157,19 +157,19 @@ print("Average total vector projected along the vector from the IBD location tow
 
 # Plots for verification
 plt.figure()
-plt.hist(posLocsX)
+plt.hist(posPD['Pos x'])
 plt.xlabel("X axis (mm)")
 plt.ylabel("Counts")
 plt.title("Number of Positron Annihilations vs X")
 
 plt.figure()
-plt.hist(posLocsY)
+plt.hist(posPD['Pos y'])
 plt.xlabel("Y axis (mm)")
 plt.ylabel("Counts")
 plt.title("Number of Positron Annihilations vs Y")
 
 plt.figure()
-plt.hist(posLocsZ)
+plt.hist(posPD['Pos z'])
 plt.xlabel("Z axis (mm)")
 plt.ylabel("Counts")
 plt.title("Number of Positron Annihilations vs Z")
