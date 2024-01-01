@@ -126,9 +126,9 @@ posPD = posPD.reset_index(drop=True)
 IBDPD = IBDPD.reset_index(drop=True)
 
 # Adding difference columns
-posPD['X difference'] = posPD['IBD x'] - posPD['Pos x']
-posPD['Y difference'] = posPD['IBD y'] - posPD['Pos y']
-posPD['Z difference'] = posPD['IBD z'] - posPD['Pos z']
+posPD['X difference'] = posPD['Pos x'] - posPD['IBD x']
+posPD['Y difference'] = posPD['Pos y'] - posPD['IBD y']
+posPD['Z difference'] = posPD['Pos z'] - posPD['IBD z'] 
 
 # Getting vector from IBD to reactor core for each event
 reactorVectorx = reactorPos[0] - posPD['IBD x']
