@@ -154,3 +154,24 @@ print("Average Y difference: ", y_dif)
 print("Average Z difference: ", z_dif)
 print("Average total vector: ", total_diff)
 print("Average total vector projected along the vector from the IBD location towards the reactor core: ", avgProjVector)
+
+# Plots for verification
+plt.figure()
+plt.hist(posLocsX)
+plt.xlabel("X axis (mm)")
+plt.ylabel("Counts")
+plt.title("Number of Positron Annihilations vs X")
+
+plt.figure()
+plt.hist(posLocsY)
+plt.xlabel("Y axis (mm)")
+plt.ylabel("Counts")
+plt.title("Number of Positron Annihilations vs Y")
+
+plt.figure()
+plt.hist(posLocsZ)
+plt.xlabel("Z axis (mm)")
+plt.ylabel("Counts")
+plt.title("Number of Positron Annihilations vs Z")
+
+plt.show()
