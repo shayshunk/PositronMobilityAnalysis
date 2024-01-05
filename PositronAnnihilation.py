@@ -174,4 +174,22 @@ plt.xlabel("Z axis (mm)")
 plt.ylabel("Counts")
 plt.title("Number of Positron Annihilations vs Z")
 
+plt.figure()
+plt.hist(posPD['X difference'], bins=100)
+plt.xlabel("X axis (mm)")
+plt.ylabel("Counts")
+plt.title("Difference between the IBD and Positron locations in X")
+
+plt.figure()
+plt.hist(posPD['Y difference'], bins=100)
+plt.xlabel("Y axis (mm)")
+plt.ylabel("Counts")
+plt.title("Difference between the IBD and Positron locations in Y")
+
+plt.figure()
+plt.hist(posPD['Z difference'], bins=100)
+plt.xlabel("Z axis (mm)")
+plt.ylabel("Counts")
+plt.title("Difference between the IBD and Positron locations in Z")
+
 plt.show()
