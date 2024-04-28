@@ -1,3 +1,6 @@
 # Ignore all data files
 *.h5
+*.h5.xml
+*.mac
+.directory
 *.root

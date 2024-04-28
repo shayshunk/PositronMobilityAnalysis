@@ -86,11 +86,7 @@ posPD = pd.concat([posPD, IBDz.rename('IBD z')], axis = 1)
 posPD = pd.concat([posPD, IBDevts.rename('IBD evt')], axis = 1)
 
 # Y is offset so fixing that by centering the range around 0 
-yRange = (posPD['IBD y'].max() - posPD['IBD y'].min()) / 2
-yMax = posPD['IBD y'].max()
-posPD['IBD y'] = posPD['IBD y'] + (yRange - yMax)
-reactorPos[1] = reactorPos[1] + (yRange - yMax)
-print("Original reactor position (mm): \nx =", reactorPos[0], "\ny =", reactorPos[1], "\nz = ", reactorPos[2])
+posPD['IBD y'] = posPD['IBD y'] + 743.1281975
 
 # Adding columns for each differece
 posPD['X difference'] = posPD['Pos x'] - posPD['IBD x']
