@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Open HDF5 file and extract datasets and tables
-with h5py.File('Final_Run.h5', 'r') as hdf:
+with h5py.File('Annihilation.h5', 'r') as hdf:
     ls = list(hdf.keys())
     print("List of datasets:\n", ls)
 
