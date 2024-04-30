@@ -125,6 +125,7 @@ IBDPD = IBDPD.reset_index(drop=True)
 posPD['X difference'] = posPD['Pos x'] - posPD['IBD x']
 posPD['Y difference'] = posPD['Pos y'] - posPD['IBD y']
 posPD['Z difference'] = posPD['Pos z'] - posPD['IBD z'] 
+posPD['Total difference'] = np.sqrt(posPD['X difference']*posPD['X difference'] + posPD['Y difference']*posPD['Y difference'] + posPD['Z difference']*posPD['Z difference'])
 
 # Getting vector from IBD to reactor core for each event
 reactorVectorx = reactorPos[0] - posPD['IBD x']
@@ -143,6 +144,7 @@ y_dif = posPD['Y difference'].mean()
 z_dif = posPD['Z difference'].mean()
 total_diff = np.sqrt(x_dif*x_dif + y_dif*y_dif + z_dif*z_dif)
 avgProjVector = projectedVector.mean()
+distance_moved = posPD['Total difference'].mean()
 
 # Printing to terminal
 print("Average X difference: ", x_dif)
@@ -150,6 +152,7 @@ print("Average Y difference: ", y_dif)
 print("Average Z difference: ", z_dif)
 print("Average total vector: ", total_diff)
 print("Average total vector projected along the vector from the IBD location towards the reactor core: ", avgProjVector)
+print("Average total distance moved from IBD point:", distance_moved)
 
 # Plots for verification
 plt.figure()
